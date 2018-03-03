@@ -10,7 +10,9 @@ import com.bounthavong.vithaya.hoctienglao.R;
 import com.bounthavong.vithaya.hoctienglao.activity.adapter.viewholder.PhraseVH;
 import com.bounthavong.vithaya.hoctienglao.activity.listener.ItemRecyclerClickListener;
 import com.bounthavong.vithaya.hoctienglao.model.Vocabulary;
+import com.bounthavong.vithaya.hoctienglao.model.dao.VocabularyDAO;
 
+import io.realm.Realm;
 import io.realm.RealmList;
 
 /**
@@ -35,7 +37,7 @@ public class PhrasesAdapter extends RecyclerView.Adapter<PhraseVH>{
     }
 
     @Override
-    public void onBindViewHolder(PhraseVH holder, int position) {
+    public void onBindViewHolder(PhraseVH holder, final int position) {
         holder.bindData(vocabularies.get(position));
         holder.setItemRecyclerClickListener(new ItemRecyclerClickListener() {
             @Override
@@ -45,10 +47,20 @@ public class PhrasesAdapter extends RecyclerView.Adapter<PhraseVH>{
                 notifyDataSetChanged();
             }
         });
+        holder.mBtnMark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                VocabularyDAO vocabularyDAO = new VocabularyDAO(Realm.getDefaultInstance());
+                vocabularyDAO.setFav(vocabularies.get(position));
+                notifyDataSetChanged();
+            }
+        });
         if (currentSelectedPosition == position) {
             holder.setVisibilityLayoutShow(View.VISIBLE);
+            holder.setColorLayoutLA(false,vocabularies.get(position).isFavorite());
         } else {
             holder.setVisibilityLayoutShow(View.GONE);
+            holder.setColorLayoutLA(true,vocabularies.get(position).isFavorite());
         }
     }
     public void setLayoutAllGone(){

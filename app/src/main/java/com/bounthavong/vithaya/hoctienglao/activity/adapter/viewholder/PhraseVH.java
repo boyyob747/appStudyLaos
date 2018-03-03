@@ -1,7 +1,10 @@
 package com.bounthavong.vithaya.hoctienglao.activity.adapter.viewholder;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -10,10 +13,12 @@ import android.widget.TextView;
 import com.bounthavong.vithaya.hoctienglao.R;
 import com.bounthavong.vithaya.hoctienglao.activity.listener.ItemRecyclerClickListener;
 import com.bounthavong.vithaya.hoctienglao.model.Vocabulary;
+import com.bounthavong.vithaya.hoctienglao.model.dao.VocabularyDAO;
 import com.bounthavong.vithaya.hoctienglao.utils.LAOPlayer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.realm.Realm;
 
 /**
  * Created by Boy- on 3/3/2561.
@@ -25,7 +30,7 @@ public class PhraseVH extends RecyclerView.ViewHolder implements View.OnClickLis
     @BindView(R.id.layout_vb_lao)
     LinearLayout mLayoutVbLao;
     @BindView(R.id.btn_mark)
-    Button mBtnMark;
+    public Button mBtnMark;
     @BindView(R.id.txt_vocabulary_vn)
     TextView mTxtVbVN;
     @BindView(R.id.layout_vb_show)
@@ -47,7 +52,6 @@ public class PhraseVH extends RecyclerView.ViewHolder implements View.OnClickLis
         itemView.setOnClickListener(this);
     }
     public void bindData(final Vocabulary vocabulary){
-
         mTxtVbLao.setText(vocabulary.getVocabulary_lao());
         mTxtVbKara.setText(vocabulary.getVocabulary_karaoke());
         mTxtVbVN.setText(vocabulary.getVocabulary_vn());
@@ -57,6 +61,18 @@ public class PhraseVH extends RecyclerView.ViewHolder implements View.OnClickLis
                 laoPlayer.playSound(vocabulary.getSound_vocabulary());
             }
         });
+
+    }
+    public void setColorLayoutLA(boolean isOutClick,boolean isMark){
+        if (!isOutClick){
+            mLayoutVbLao.setBackgroundColor(view.getResources().getColor(R.color.colorPrimary));
+            mTxtVbVN.setTextColor(view.getResources().getColor(R.color.icons));
+            mBtnMark.setBackgroundResource(isMark ? R.drawable.ic_bookmark_white_24dp : R.drawable.ic_bookmark_border_white_24dp);
+        }else{
+            mLayoutVbLao.setBackgroundColor(view.getResources().getColor(R.color.icons));
+            mTxtVbVN.setTextColor(view.getResources().getColor(R.color.primary_text));
+            mBtnMark.setBackgroundResource(isMark ? R.drawable.ic_bookmark_red_300_24dp : R.drawable.ic_bookmark_border_red_300_24dp);
+        }
     }
 
     @Override

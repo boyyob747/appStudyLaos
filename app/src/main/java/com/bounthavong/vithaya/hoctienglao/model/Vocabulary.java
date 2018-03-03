@@ -12,6 +12,15 @@ public class Vocabulary extends RealmObject{
     private String vocabulary_vn;
     private String sound_vocabulary;
     private String vocabulary_karaoke;
+    private boolean isFavorite = false;
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
+    }
 
     public String getVocabulary_lao() {
         return vocabulary_lao;

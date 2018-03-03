@@ -12,7 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.bounthavong.vithaya.hoctienglao.config.Default;
-import com.bounthavong.vithaya.hoctienglao.fragments.BaseFragment;
+import com.bounthavong.vithaya.hoctienglao.fragments.PhrasesFragment;
 import com.bounthavong.vithaya.hoctienglao.json.ReadJson;
 import com.bounthavong.vithaya.hoctienglao.model.dao.LevelDAO;
 
@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
             Fragment selectedFragment = null;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    selectedFragment = BaseFragment.newInstance();
+                    selectedFragment = PhrasesFragment.newInstance();
                     break;
                 case R.id.navigation_dashboard:
-                    selectedFragment = BaseFragment.newInstance();
+                    selectedFragment = PhrasesFragment.newInstance();
                     break;
                 case R.id.navigation_notifications:
-                    selectedFragment = BaseFragment.newInstance();
+                    selectedFragment = PhrasesFragment.newInstance();
                     break;
             }
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void changeFragment() {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_layout, BaseFragment.newInstance());
+        transaction.replace(R.id.frame_layout, PhrasesFragment.newInstance());
         transaction.addToBackStack(null);
         transaction.commit();
         navigation.setSelectedItemId(R.id.navigation_home);

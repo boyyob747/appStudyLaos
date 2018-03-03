@@ -10,6 +10,15 @@ import io.realm.RealmList;
 
 public class PharasesEvent {
     private RealmList<Vocabulary> vocabularies;
+    private String title;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public PharasesEvent(RealmList<Vocabulary> vocabularies) {
         this.vocabularies = vocabularies;

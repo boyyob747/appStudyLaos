@@ -39,6 +39,7 @@ public class PhrasesActivity extends AppCompatActivity {
     private int currentPosition = -1;
     private View currentView;
     private LAOPlayer laoPlayer;
+    private String title  = PhrasesActivity.class.getName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +48,7 @@ public class PhrasesActivity extends AppCompatActivity {
         EventBus.getDefault().register(this);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle(title);
         setWidget();
     }
     LinearLayout linearLayoutCurrent = null;
@@ -84,6 +86,7 @@ public class PhrasesActivity extends AppCompatActivity {
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
     public void onBranch(PharasesEvent pharasesEvent) {
         vocabularies = pharasesEvent.getVocabularies();
+        title = pharasesEvent.getTitle();
         Log.i(TAG,"vocabularies size = " + vocabularies.size());
         EventBus.getDefault().removeStickyEvent(pharasesEvent);
     }

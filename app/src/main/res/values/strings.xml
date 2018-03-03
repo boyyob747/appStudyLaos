@@ -11,4 +11,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_phrases">PhrasesActivity</string>
+    <string name="title_fav">Ưa thích</string>
+    <string name="all_phrases">Tất cả cum từ</string>
+    <string name="fav">Ưa thích</string>
 </resources>

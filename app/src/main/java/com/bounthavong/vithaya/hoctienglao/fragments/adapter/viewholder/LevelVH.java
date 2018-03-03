@@ -60,6 +60,7 @@ public class LevelVH extends RecyclerView.ViewHolder{
             @Override
             public void onClick(View view, int position) {
                 PharasesEvent pharasesEvent = new PharasesEvent(level.getCategories().get(position).getVocabularies());
+                pharasesEvent.setTitle(level.getCategories().get(position).getName());
                 EventBus.getDefault().postSticky(pharasesEvent);
                 Intent intent = new Intent(context, PhrasesActivity.class);
                 context.startActivity(intent);
