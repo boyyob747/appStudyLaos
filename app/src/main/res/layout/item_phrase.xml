@@ -25,6 +25,7 @@
             android:textColor="@color/primary_text"/>
     </LinearLayout>
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/layout_vb_show"
         android:background="@color/colorPrimaryDark"
         android:orientation="vertical"

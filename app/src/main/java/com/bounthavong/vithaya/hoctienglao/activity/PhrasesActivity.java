@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 
 import com.bounthavong.vithaya.hoctienglao.R;
 import com.bounthavong.vithaya.hoctienglao.activity.adapter.PhrasesAdapter;
+import com.bounthavong.vithaya.hoctienglao.activity.listener.ItemRecyclerClickListener;
 import com.bounthavong.vithaya.hoctienglao.evenbus.PharasesEvent;
 import com.bounthavong.vithaya.hoctienglao.fragments.adapter.listener.LAOTouchListener;
 import com.bounthavong.vithaya.hoctienglao.model.Vocabulary;
@@ -33,6 +34,9 @@ public class PhrasesActivity extends AppCompatActivity {
     RecyclerView recyclerPhrases;
     private PhrasesAdapter phrasesAdapter ;
     private RealmList<Vocabulary> vocabularies;
+    private boolean isFirstClick = true;
+    private int currentPosition = -1;
+    private View currentView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +47,7 @@ public class PhrasesActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setWidget();
     }
-
+    LinearLayout linearLayoutCurrent = null;
     private void setWidget() {
         if (vocabularies != null){
             phrasesAdapter = new PhrasesAdapter(vocabularies,this);
@@ -53,22 +57,12 @@ public class PhrasesActivity extends AppCompatActivity {
             recyclerPhrases.setLayoutManager(layoutManager);
             recyclerPhrases.addItemDecoration(itemDecoration);
             recyclerPhrases.setAdapter(phrasesAdapter);
-            recyclerPhrases.addOnItemTouchListener(new LAOTouchListener(this, recyclerPhrases, new LAOTouchListener.OnTouchActionListener() {
-                @Override
-                public void onLeftSwipe(View view, int position) {
-
-                }
-
-                @Override
-                public void onRightSwipe(View view, int position) {
-
-                }
-
+            phrasesAdapter.setItemClick(new ItemRecyclerClickListener() {
                 @Override
                 public void onClick(View view, int position) {
-                    ((LinearLayout)view.findViewById(R.id.layout_vb_show)).setVisibility(View.VISIBLE);
+
                 }
-            }));
+            });
         }
     }
 
