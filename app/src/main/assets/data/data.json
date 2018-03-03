@@ -1,0 +1,245 @@
+[
+  {
+      "name" : "Người mới bắt đầu",
+      "categories" : [{
+        "name" : "con số",
+        "icon_img" : "number",
+        "vocabularies" :[{
+          "vocabulary_lao" : "ສູນ",
+          "vocabulary_vn" : "không",
+          "vocabulary_karaoke" : "sun",
+          "sound_vocabulary" : "zero"
+        },{
+          "vocabulary_lao" : "ໜຶ່ງ",
+          "vocabulary_vn" : "một",
+          "vocabulary_karaoke" : "nueng",
+          "sound_vocabulary" : "one"
+        },{
+          "vocabulary_lao" : "ສອງ",
+          "vocabulary_vn" : "hai",
+          "vocabulary_karaoke" : "song",
+          "sound_vocabulary" : "two"
+        },{
+          "vocabulary_lao" : "ສາມ",
+          "vocabulary_vn" : "ba",
+          "vocabulary_karaoke" : "saam",
+          "sound_vocabulary" : "three"
+        },{
+          "vocabulary_lao" : "ສີ່",
+          "vocabulary_vn" : "bốn",
+          "vocabulary_karaoke" : "sii",
+          "sound_vocabulary" : "four"
+        },{
+          "vocabulary_lao" : "ຫ້າ",
+          "vocabulary_vn" : "năm",
+          "vocabulary_karaoke" : "haa",
+          "sound_vocabulary" : "five"
+        },{
+          "vocabulary_lao" : "ຫົກ",
+          "vocabulary_vn" : "sáu",
+          "vocabulary_karaoke" : "hok",
+          "sound_vocabulary" : "six"
+        },{
+          "vocabulary_lao" : "ເຈັດ",
+          "vocabulary_vn" : "bảy",
+          "vocabulary_karaoke" : "jet",
+          "sound_vocabulary" : "seven"
+        },{
+          "vocabulary_lao" : "ແປດ",
+          "vocabulary_vn" : "tám",
+          "vocabulary_karaoke" : "bpaaet",
+          "sound_vocabulary" : "eight"
+        },{
+          "vocabulary_lao" : "ເກົ້າ",
+          "vocabulary_vn" : "chín",
+          "vocabulary_karaoke" : "gow",
+          "sound_vocabulary" : "nine"
+        },{
+          "vocabulary_lao" : "ສິບ",
+          "vocabulary_vn" : "mười",
+          "vocabulary_karaoke" : "sip",
+          "sound_vocabulary" : "ten"
+        }]
+      },{
+        "name" : "con số",
+        "icon_img" : "number",
+        "vocabularies" :[{
+          "vocabulary_lao" : "ສູນ",
+          "vocabulary_vn" : "không",
+          "vocabulary_karaoke" : "sun",
+          "sound_vocabulary" : "zero"
+        },{
+          "vocabulary_lao" : "ໜຶ່ງ",
+          "vocabulary_vn" : "một",
+          "vocabulary_karaoke" : "nueng",
+          "sound_vocabulary" : "one"
+        },{
+          "vocabulary_lao" : "ສອງ",
+          "vocabulary_vn" : "hai",
+          "vocabulary_karaoke" : "song",
+          "sound_vocabulary" : "two"
+        },{
+          "vocabulary_lao" : "ສາມ",
+          "vocabulary_vn" : "ba",
+          "vocabulary_karaoke" : "saam",
+          "sound_vocabulary" : "three"
+        },{
+          "vocabulary_lao" : "ສີ່",
+          "vocabulary_vn" : "bốn",
+          "vocabulary_karaoke" : "sii",
+          "sound_vocabulary" : "four"
+        },{
+          "vocabulary_lao" : "ຫ້າ",
+          "vocabulary_vn" : "năm",
+          "vocabulary_karaoke" : "haa",
+          "sound_vocabulary" : "five"
+        },{
+          "vocabulary_lao" : "ຫົກ",
+          "vocabulary_vn" : "sáu",
+          "vocabulary_karaoke" : "hok",
+          "sound_vocabulary" : "six"
+        },{
+          "vocabulary_lao" : "ເຈັດ",
+          "vocabulary_vn" : "bảy",
+          "vocabulary_karaoke" : "jet",
+          "sound_vocabulary" : "seven"
+        },{
+          "vocabulary_lao" : "ແປດ",
+          "vocabulary_vn" : "tám",
+          "vocabulary_karaoke" : "bpaaet",
+          "sound_vocabulary" : "eight"
+        },{
+          "vocabulary_lao" : "ເກົ້າ",
+          "vocabulary_vn" : "chín",
+          "vocabulary_karaoke" : "gow",
+          "sound_vocabulary" : "nine"
+        },{
+          "vocabulary_lao" : "ສິບ",
+          "vocabulary_vn" : "mười",
+          "vocabulary_karaoke" : "sip",
+          "sound_vocabulary" : "ten"
+        }]
+      },{
+        "name" : "con số",
+        "icon_img" : "number",
+        "vocabularies" :[{
+          "vocabulary_lao" : "ສູນ",
+          "vocabulary_vn" : "không",
+          "vocabulary_karaoke" : "sun",
+          "sound_vocabulary" : "zero"
+        },{
+          "vocabulary_lao" : "ໜຶ່ງ",
+          "vocabulary_vn" : "một",
+          "vocabulary_karaoke" : "nueng",
+          "sound_vocabulary" : "one"
+        },{
+          "vocabulary_lao" : "ສອງ",
+          "vocabulary_vn" : "hai",
+          "vocabulary_karaoke" : "song",
+          "sound_vocabulary" : "two"
+        },{
+          "vocabulary_lao" : "ສາມ",
+          "vocabulary_vn" : "ba",
+          "vocabulary_karaoke" : "saam",
+          "sound_vocabulary" : "three"
+        },{
+          "vocabulary_lao" : "ສີ່",
+          "vocabulary_vn" : "bốn",
+          "vocabulary_karaoke" : "sii",
+          "sound_vocabulary" : "four"
+        },{
+          "vocabulary_lao" : "ຫ້າ",
+          "vocabulary_vn" : "năm",
+          "vocabulary_karaoke" : "haa",
+          "sound_vocabulary" : "five"
+        },{
+          "vocabulary_lao" : "ຫົກ",
+          "vocabulary_vn" : "sáu",
+          "vocabulary_karaoke" : "hok",
+          "sound_vocabulary" : "six"
+        },{
+          "vocabulary_lao" : "ເຈັດ",
+          "vocabulary_vn" : "bảy",
+          "vocabulary_karaoke" : "jet",
+          "sound_vocabulary" : "seven"
+        },{
+          "vocabulary_lao" : "ແປດ",
+          "vocabulary_vn" : "tám",
+          "vocabulary_karaoke" : "bpaaet",
+          "sound_vocabulary" : "eight"
+        },{
+          "vocabulary_lao" : "ເກົ້າ",
+          "vocabulary_vn" : "chín",
+          "vocabulary_karaoke" : "gow",
+          "sound_vocabulary" : "nine"
+        },{
+          "vocabulary_lao" : "ສິບ",
+          "vocabulary_vn" : "mười",
+          "vocabulary_karaoke" : "sip",
+          "sound_vocabulary" : "ten"
+        }]
+      }]
+  },{
+  "name" : "Cao cấp",
+  "categories" : [{
+    "name" : "con số",
+    "icon_img" : "number",
+    "vocabularies" :[{
+      "vocabulary_lao" : "ສູນ",
+      "vocabulary_vn" : "không",
+      "vocabulary_karaoke" : "sun",
+      "sound_vocabulary" : "zero"
+    },{
+      "vocabulary_lao" : "ໜຶ່ງ",
+      "vocabulary_vn" : "một",
+      "vocabulary_karaoke" : "nueng",
+      "sound_vocabulary" : "one"
+    },{
+      "vocabulary_lao" : "ສອງ",
+      "vocabulary_vn" : "hai",
+      "vocabulary_karaoke" : "song",
+      "sound_vocabulary" : "two"
+    },{
+      "vocabulary_lao" : "ສາມ",
+      "vocabulary_vn" : "ba",
+      "vocabulary_karaoke" : "saam",
+      "sound_vocabulary" : "three"
+    },{
+      "vocabulary_lao" : "ສີ່",
+      "vocabulary_vn" : "bốn",
+      "vocabulary_karaoke" : "sii",
+      "sound_vocabulary" : "four"
+    },{
+      "vocabulary_lao" : "ຫ້າ",
+      "vocabulary_vn" : "năm",
+      "vocabulary_karaoke" : "haa",
+      "sound_vocabulary" : "five"
+    },{
+      "vocabulary_lao" : "ຫົກ",
+      "vocabulary_vn" : "sáu",
+      "vocabulary_karaoke" : "hok",
+      "sound_vocabulary" : "six"
+    },{
+      "vocabulary_lao" : "ເຈັດ",
+      "vocabulary_vn" : "bảy",
+      "vocabulary_karaoke" : "jet",
+      "sound_vocabulary" : "seven"
+    },{
+      "vocabulary_lao" : "ແປດ",
+      "vocabulary_vn" : "tám",
+      "vocabulary_karaoke" : "bpaaet",
+      "sound_vocabulary" : "eight"
+    },{
+      "vocabulary_lao" : "ເກົ້າ",
+      "vocabulary_vn" : "chín",
+      "vocabulary_karaoke" : "gow",
+      "sound_vocabulary" : "nine"
+    },{
+      "vocabulary_lao" : "ສິບ",
+      "vocabulary_vn" : "mười",
+      "vocabulary_karaoke" : "sip",
+      "sound_vocabulary" : "ten"
+    }]
+  }]
+}
+]
