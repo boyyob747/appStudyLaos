@@ -16,6 +16,7 @@ import com.bounthavong.vithaya.hoctienglao.activity.listener.ItemRecyclerClickLi
 import com.bounthavong.vithaya.hoctienglao.evenbus.PharasesEvent;
 import com.bounthavong.vithaya.hoctienglao.fragments.adapter.listener.LAOTouchListener;
 import com.bounthavong.vithaya.hoctienglao.model.Vocabulary;
+import com.bounthavong.vithaya.hoctienglao.utils.LAOPlayer;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -37,6 +38,7 @@ public class PhrasesActivity extends AppCompatActivity {
     private boolean isFirstClick = true;
     private int currentPosition = -1;
     private View currentView;
+    private LAOPlayer laoPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,7 @@ public class PhrasesActivity extends AppCompatActivity {
     }
     LinearLayout linearLayoutCurrent = null;
     private void setWidget() {
+        laoPlayer = new LAOPlayer(this);
         if (vocabularies != null){
             phrasesAdapter = new PhrasesAdapter(vocabularies,this);
             LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -60,7 +63,7 @@ public class PhrasesActivity extends AppCompatActivity {
             phrasesAdapter.setItemClick(new ItemRecyclerClickListener() {
                 @Override
                 public void onClick(View view, int position) {
-
+                    laoPlayer.playSound(vocabularies.get(position).getSound_vocabulary());
                 }
             });
         }
