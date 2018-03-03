@@ -12,9 +12,7 @@ import android.view.ViewGroup;
 
 import com.bounthavong.vithaya.hoctienglao.R;
 import com.bounthavong.vithaya.hoctienglao.fragments.adapter.LevelAdapter;
-import com.bounthavong.vithaya.hoctienglao.json.ReadJson;
 import com.bounthavong.vithaya.hoctienglao.model.Level;
-import com.bounthavong.vithaya.hoctienglao.model.dao.LevelDAO;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,8 +23,8 @@ import io.realm.RealmResults;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PhrasesFragment extends Fragment {
-    private static final String TAG = PhrasesFragment.class.getName();
+public class BaseFragment extends Fragment {
+    private static final String TAG = BaseFragment.class.getName();
     View view;
     @BindView(R.id.recycler_level)
     RecyclerView recyclerLevel;
@@ -34,21 +32,19 @@ public class PhrasesFragment extends Fragment {
     private LevelAdapter levelAdapter;
     RealmResults<Level> levels ;
     Realm realm;
-    public static PhrasesFragment newInstance() {
-        PhrasesFragment fragment = new PhrasesFragment();
+    public static BaseFragment newInstance() {
+        BaseFragment fragment = new BaseFragment();
         return fragment;
     }
 
-    public PhrasesFragment() {
-        // Required empty public constructor
+    public BaseFragment() {
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_phrases, container, false);
+        view = inflater.inflate(R.layout.fragment_base, container, false);
         unbinder = ButterKnife.bind(this, view);
         realm = Realm.getDefaultInstance();
         setWidget();
@@ -56,8 +52,6 @@ public class PhrasesFragment extends Fragment {
     }
 
     private void setWidget() {
-        LevelDAO levelDAO = new LevelDAO(realm);
-        levelDAO.saveData(ReadJson.loadJSONFromAsset(getActivity()));
         levels = realm.where(Level.class).findAll();
         Log.i(TAG,levels.toString());
         levelAdapter = new LevelAdapter(levels,getContext());

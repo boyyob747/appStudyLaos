@@ -5,12 +5,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
         android:id="@+id/name_level"/>
+
     <android.support.v7.widget.RecyclerView
         android:layout_below="@id/name_level"
         android:id="@+id/recycler_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
     </android.support.v7.widget.RecyclerView>
 </RelativeLayout>

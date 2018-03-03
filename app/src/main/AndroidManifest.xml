@@ -3,11 +3,11 @@
     package="com.bounthavong.vithaya.hoctienglao">
 
     <application
+        android:name=".config.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:name=".config.App"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -19,6 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.PhrasesActivity"
+            android:label="@string/title_activity_phrases"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
