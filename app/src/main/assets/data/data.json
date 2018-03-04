@@ -1,64 +1,180 @@
 [
   {
-      "name" : "Người mới bắt đầu",
-      "categories" : [{
-        "name" : "Con số",
-        "icon_img" : "number.png",
-        "vocabularies" :[{
-          "vocabulary_lao" : "ສູນ",
-          "vocabulary_vn" : "Không",
-          "vocabulary_karaoke" : "sun",
-          "sound_vocabulary" : "zero"
-        },{
-          "vocabulary_lao" : "ໜຶ່ງ",
-          "vocabulary_vn" : "Một",
-          "vocabulary_karaoke" : "nueng",
-          "sound_vocabulary" : "one"
-        },{
-          "vocabulary_lao" : "ສອງ",
-          "vocabulary_vn" : "Hai",
-          "vocabulary_karaoke" : "song",
-          "sound_vocabulary" : "two"
-        },{
-          "vocabulary_lao" : "ສາມ",
-          "vocabulary_vn" : "Ba",
-          "vocabulary_karaoke" : "saam",
-          "sound_vocabulary" : "three"
-        },{
-          "vocabulary_lao" : "ສີ່",
-          "vocabulary_vn" : "Bốn",
-          "vocabulary_karaoke" : "sii",
-          "sound_vocabulary" : "four"
-        },{
-          "vocabulary_lao" : "ຫ້າ",
-          "vocabulary_vn" : "Năm",
-          "vocabulary_karaoke" : "haa",
-          "sound_vocabulary" : "five"
-        },{
-          "vocabulary_lao" : "ຫົກ",
-          "vocabulary_vn" : "Sáu",
-          "vocabulary_karaoke" : "hok",
-          "sound_vocabulary" : "six"
-        },{
-          "vocabulary_lao" : "ເຈັດ",
-          "vocabulary_vn" : "Bảy",
-          "vocabulary_karaoke" : "jet",
-          "sound_vocabulary" : "seven"
-        },{
-          "vocabulary_lao" : "ແປດ",
-          "vocabulary_vn" : "Tám",
-          "vocabulary_karaoke" : "bpaaet",
-          "sound_vocabulary" : "eight"
-        },{
-          "vocabulary_lao" : "ເກົ້າ",
-          "vocabulary_vn" : "Chín",
-          "vocabulary_karaoke" : "gow",
-          "sound_vocabulary" : "nine"
-        },{
-          "vocabulary_lao" : "ສິບ",
-          "vocabulary_vn" : "Mười",
-          "vocabulary_karaoke" : "sip",
-          "sound_vocabulary" : "ten"
-        }]
-      }]
-  }]
+    "name": "Người mới bắt đầu",
+    "categories": [
+      {
+        "name": "Con số",
+        "icon_img": "number.png",
+        "vocabularies": [
+          {
+            "vocabulary_lao": "ສູນ",
+            "vocabulary_vn": "Không",
+            "vocabulary_karaoke": "sun",
+            "sound_vocabulary": "zero"
+          },
+          {
+            "vocabulary_lao": "ໜຶ່ງ",
+            "vocabulary_vn": "Một",
+            "vocabulary_karaoke": "nueng",
+            "sound_vocabulary": "one"
+          },
+          {
+            "vocabulary_lao": "ສອງ",
+            "vocabulary_vn": "Hai",
+            "vocabulary_karaoke": "song",
+            "sound_vocabulary": "two"
+          },
+          {
+            "vocabulary_lao": "ສາມ",
+            "vocabulary_vn": "Ba",
+            "vocabulary_karaoke": "saam",
+            "sound_vocabulary": "three"
+          },
+          {
+            "vocabulary_lao": "ສີ່",
+            "vocabulary_vn": "Bốn",
+            "vocabulary_karaoke": "sii",
+            "sound_vocabulary": "four"
+          },
+          {
+            "vocabulary_lao": "ຫ້າ",
+            "vocabulary_vn": "Năm",
+            "vocabulary_karaoke": "haa",
+            "sound_vocabulary": "five"
+          },
+          {
+            "vocabulary_lao": "ຫົກ",
+            "vocabulary_vn": "Sáu",
+            "vocabulary_karaoke": "hok",
+            "sound_vocabulary": "six"
+          },
+          {
+            "vocabulary_lao": "ເຈັດ",
+            "vocabulary_vn": "Bảy",
+            "vocabulary_karaoke": "jet",
+            "sound_vocabulary": "seven"
+          },
+          {
+            "vocabulary_lao": "ແປດ",
+            "vocabulary_vn": "Tám",
+            "vocabulary_karaoke": "bpaaet",
+            "sound_vocabulary": "eight"
+          },
+          {
+            "vocabulary_lao": "ເກົ້າ",
+            "vocabulary_vn": "Chín",
+            "vocabulary_karaoke": "gow",
+            "sound_vocabulary": "nine"
+          },
+          {
+            "vocabulary_lao": "ສິບ",
+            "vocabulary_vn": "Mười",
+            "vocabulary_karaoke": "sip",
+            "sound_vocabulary": "ten"
+          }
+        ]
+      },{
+        "name": "Lời chào hỏi",
+        "icon_img": "greetings.png",
+        "vocabularies": [
+          {
+            "vocabulary_lao": "ເຈົ້າຊື່ຫຍັງ",
+            "vocabulary_vn": "Bạn tên là gì ?",
+            "vocabulary_karaoke": "jao sue yang",
+            "sound_vocabulary": "i0001"
+          },
+          {
+            "vocabulary_lao": "ຂ້ອຍຊື່ວ່າ",
+            "vocabulary_vn": "Tôi tên là",
+            "vocabulary_karaoke": "khoy sue wa",
+            "sound_vocabulary": "i0002"
+          },
+          {
+            "vocabulary_lao": "ເຈົ້າມາຈາກໄສ",
+            "vocabulary_vn": "Bạn đến từ nước nào ?",
+            "vocabulary_karaoke": "jao ma chak sai",
+            "sound_vocabulary": "i0003"
+          },
+          {
+            "vocabulary_lao": "ຂ້ອຍມາຈາກ (ປະເທດ)",
+            "vocabulary_vn": "Tôi đến từ (nước) ...",
+            "vocabulary_karaoke": "khoy ma chak (pathed)",
+            "sound_vocabulary": "i0004"
+          },
+          {
+            "vocabulary_lao": "ເຈົ້າອາຍຸເທົ່າໃດ",
+            "vocabulary_vn": "Bạn bao nhiều tuổi ?",
+            "vocabulary_karaoke": "Jao ayu thao dai",
+            "sound_vocabulary": "i0005"
+          },
+          {
+            "vocabulary_lao": "ຂ້ອຍອາຍຸ 25 ປີ",
+            "vocabulary_vn": "Tôi 25 tuổi",
+            "vocabulary_karaoke": "khoy ayuu 25 pi",
+            "sound_vocabulary": "i0006"
+          },
+          {
+            "vocabulary_lao": "ເຈົ້າມີອ້າຍເອີ້ອຍນ້ອງຈັກຄົນ",
+            "vocabulary_vn": "Nhà bạn có bao nhiêu anh chị em ?",
+            "vocabulary_karaoke": "chao mi ai euoy nong chak khon",
+            "sound_vocabulary": "i0007"
+          },
+          {
+            "vocabulary_lao": "ຂ້ອຍມີນ້ອງຊາຍຄົນໜຶ່ງ",
+            "vocabulary_vn": "Tôi có một em trai",
+            "vocabulary_karaoke": "khoy mi nong sai khon nung",
+            "sound_vocabulary": "i0008"
+          },
+          {
+            "vocabulary_lao": "ຂ້ອຍມີນ້ອງສາວສອງຄົນ",
+            "vocabulary_vn": "Tôi có hai chị gái",
+            "vocabulary_karaoke": "khoy mi nong sao song khon",
+            "sound_vocabulary": "i0009"
+          },
+          {
+            "vocabulary_lao": "ເຈົ້າເຮັດວຽກຢູ່ໄສ",
+            "vocabulary_vn": "Bạn làm việc ở đâu",
+            "vocabulary_karaoke": "chao hed uak yu sai",
+            "sound_vocabulary": "i0010"
+          },
+          {
+            "vocabulary_lao": "ຂ້ອຍເຮັດວຽກຢູ່",
+            "vocabulary_vn": "Tôi làm việc ở ....",
+            "vocabulary_karaoke": "khoy hed uak yu",
+            "sound_vocabulary": "i0011"
+          },
+          {
+            "vocabulary_lao": "ເຈົ້າຮຽນຢູ່ໄສ",
+            "vocabulary_vn": "Bạn học trường nào ?",
+            "vocabulary_karaoke": "chao hien yu sai",
+            "sound_vocabulary": "i0012"
+          },
+          {
+            "vocabulary_lao": "ຂ້ອຍຮຽນຢູ່",
+            "vocabulary_vn": "Tội học trường ...",
+            "vocabulary_karaoke": "khoy hian yu",
+            "sound_vocabulary": "i0013"
+          },
+          {
+            "vocabulary_lao": "ຂ້ອຍຂໍນາມບັດເຈົ້າແດ່ໄດ້ບໍ",
+            "vocabulary_vn": "Tôi có thể xin danh thiếp của bạn được không ?",
+            "vocabulary_karaoke": "khoy kho nam bad chao dae dai bo",
+            "sound_vocabulary": "i0014"
+          },
+          {
+            "vocabulary_lao": "ຍິນດີທີໄດ່້ຮູ້ຈັກ",
+            "vocabulary_vn": "Rất vui được gặp bạn",
+            "vocabulary_karaoke": "yin di thi dai hu chak",
+            "sound_vocabulary": "i0015"
+          },
+          {
+            "vocabulary_lao": "ຢ່າລືມກັນເດີ!",
+            "vocabulary_vn": "Hãy giữ liên lạc!",
+            "vocabulary_karaoke": "yalum kan der",
+            "sound_vocabulary": "i0016"
+          }
+        ]
+      }
+    ]
+  }
+]

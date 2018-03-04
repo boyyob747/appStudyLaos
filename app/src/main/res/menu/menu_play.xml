@@ -6,6 +6,8 @@
     <item
         android:title="@string/play"
         android:id="@+id/menu_play"
+        app:showAsAction="always"
+        android:orderInCategory="1"
         android:icon="@drawable/ic_play_circle_filled_white_36dp"
         />
 </menu>

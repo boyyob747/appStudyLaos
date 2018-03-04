@@ -68,7 +68,6 @@ public class QuizActivity extends AppCompatActivity {
     int maxSize = 0;
     int questionRight = 0;
     int questionNotRight = 0;
-    int countProgress = 0;
     int indexNext = 0;
     boolean isNotRight = false;
     @Override
