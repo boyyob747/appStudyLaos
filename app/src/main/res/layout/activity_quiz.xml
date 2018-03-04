@@ -41,7 +41,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:background="@drawable/ic_play_circle_outline_red_700_48dp"/>
+                android:background="@drawable/ic_play_circle_outline_blue_a100_24dp"/>
         </RelativeLayout>
     </LinearLayout>
     <View

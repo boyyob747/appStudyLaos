@@ -99,6 +99,7 @@ public class QuizActivity extends AppCompatActivity {
         btnPlayAudio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                laoPlayer.stopPlaying();
                 laoPlayer.playSound(soundVb);
             }
         });
@@ -155,7 +156,7 @@ public class QuizActivity extends AppCompatActivity {
                         vocabulary = vocabulariesRandom.get(indexNext);
 
                         if (vocabulariesQuestion.get(position) == vocabulariesQuestion.get(indexRightRandom)) {
-                            Snackbar.make(view, "Right", Snackbar.LENGTH_SHORT).show();
+                            Snackbar.make(view, "Đúng!", 250).show();
                             ++questionRight;
                             getQuestion();
                         } else {
@@ -180,6 +181,7 @@ public class QuizActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+        laoPlayer.stopPlaying();
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)

@@ -58,6 +58,7 @@ public class PhraseVH extends RecyclerView.ViewHolder implements View.OnClickLis
         mBtnPlayAudio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                laoPlayer.stopPlaying();
                 laoPlayer.playSound(vocabulary.getSound_vocabulary());
             }
         });
@@ -71,7 +72,7 @@ public class PhraseVH extends RecyclerView.ViewHolder implements View.OnClickLis
         }else{
             mLayoutVbLao.setBackgroundColor(view.getResources().getColor(R.color.icons));
             mTxtVbVN.setTextColor(view.getResources().getColor(R.color.primary_text));
-            mBtnMark.setBackgroundResource(isMark ? R.drawable.ic_bookmark_red_300_24dp : R.drawable.ic_bookmark_border_red_300_24dp);
+            mBtnMark.setBackgroundResource(isMark ? R.drawable.ic_bookmark_blue_800_24dp : R.drawable.ic_bookmark_border_blue_800_24dp);
         }
     }
 

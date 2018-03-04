@@ -57,11 +57,11 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizVH>{
        });
        if (isAwser){
            if (position == positionChoosed){
-               holder.mRadioVb.setButtonDrawable(R.drawable.ic_radio_button_checked_white_24dp);
+//               holder.mRadioVb.setButtonDrawable(R.drawable.ic_radio_button_checked_white_24dp);
                if (positionChoosed == indexRightRandom){
                    holder.setColorQT(R.color.green,true);
                }else{
-                   holder.setColorQT(R.color.primary_dark,true);
+                   holder.setColorQT(R.color.red_btn_bg_pressed_color,true);
                }
            }else{
                if (position == indexRightRandom){

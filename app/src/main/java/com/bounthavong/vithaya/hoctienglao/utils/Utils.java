@@ -50,4 +50,7 @@ public class Utils {
     public static int getSizeHeightQuestion(int maxSize,int removeSize){
         return (maxSize - removeSize)/4;
     }
+    public static int getIdimgWithString(String name,Context context){
+        return context.getResources().getIdentifier(name , "drawable", context.getPackageName());
+    }
 }

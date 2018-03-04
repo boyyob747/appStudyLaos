@@ -69,6 +69,7 @@ public class PhrasesActivity extends AppCompatActivity {
             phrasesAdapter.setItemClick(new ItemRecyclerClickListener() {
                 @Override
                 public void onClick(View view, int position) {
+                    laoPlayer.stopPlaying();
                     laoPlayer.playSound(vocabularies.get(position).getSound_vocabulary());
                 }
             });
@@ -79,6 +80,7 @@ public class PhrasesActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+        laoPlayer.stopPlaying();
     }
 
     @Override

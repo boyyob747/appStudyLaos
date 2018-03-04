@@ -45,7 +45,7 @@ public class LevelVH extends RecyclerView.ViewHolder{
     public void bindData(final Level level){
         mTxtName.setText(level.getName());
         categoryAdapter = new CategoryAdapter(level.getCategories(),context);
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 2);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
         mRecyclerCategory.setLayoutManager(mLayoutManager);
         mRecyclerCategory.setItemAnimator(new DefaultItemAnimator());
         mRecyclerCategory.setAdapter(categoryAdapter);

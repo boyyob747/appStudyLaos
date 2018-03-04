@@ -17,4 +17,8 @@
     <string name="cau_do_da_hoan_thanh">Câu đố đã hoàn thành</string>
     <string name="ban_da_tren_dap_an_dunng">Bạn đã chọn đúng %d trên %d đáp án đúng !</string>
     <string name="play">Play</string>
+    <string name="cac_tu">Các từ còn chưa chưa nhớ : %d từ</string>
+    <string name="remember">Nhớ rồi</string>
+    <string name="not_remember">Chưa nhớ</string>
+    <string name="show">Hiện thị câu trả lờ</string>
 </resources>

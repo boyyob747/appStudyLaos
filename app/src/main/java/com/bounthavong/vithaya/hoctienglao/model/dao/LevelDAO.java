@@ -70,4 +70,9 @@ public class LevelDAO {
             }
         });
     }
+    public RealmList<Level> getAllLevel(){
+        RealmList<Level> levels = new RealmList<>();
+        levels.addAll(realm.where(Level.class).findAll());
+        return levels;
+    }
 }

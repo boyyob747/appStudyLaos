@@ -1,88 +1,70 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:cl="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp"
     tools:context="com.bounthavong.vithaya.hoctienglao.fragments.PhrasesFragment">
     <LinearLayout
         android:id="@+id/card_view"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <android.support.v7.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/card_margin"
-            android:elevation="3dp"
-            card_view:cardCornerRadius="@dimen/card_album_radius">
             <RelativeLayout
+                android:layout_weight="1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+                <at.markushi.ui.CircleButton
+                    android:layout_centerHorizontal="true"
                     android:id="@+id/icon_fav"
-                    android:layout_width="match_parent"
-                    android:layout_height="100.0dip"
-                    android:src="@drawable/bookmark"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:clickable="true"
-                     />
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_bookmark_border_black_36dp"
+                    android:tint="@color/icons"
+                    app:cb_color="@color/colorPrimary"
+                    app:cb_pressedRingWidth="8dip" />
                 <TextView
+                    android:layout_below="@+id/icon_fav"
                     android:text="@string/fav"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/icon_fav"
-                    android:paddingLeft="@dimen/album_title_padding"
-                    android:paddingRight="@dimen/album_title_padding"
-                    android:paddingTop="@dimen/album_title_padding"
+                    android:layout_margin="5dp"
                     android:textAlignment="center"
-                    android:textColor="@color/album_title"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/album_title" />
             </RelativeLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/card_margin"
-            android:elevation="3dp"
-            card_view:cardCornerRadius="@dimen/card_album_radius">
             <RelativeLayout
+                android:layout_weight="1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/icon_all_phrares"
-                    android:layout_width="match_parent"
-                    android:layout_height="100.0dip"
-                    android:src="@drawable/allphares"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:clickable="true" />
+                android:layout_height="wrap_content">
+                    <at.markushi.ui.CircleButton
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/icon_all_phrares"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_clear_all_black_36dp"
+                        android:tint="@color/bb"
+                        app:cb_color="@color/colorPrimary"
+                        app:cb_pressedRingWidth="8dip" />
                 <TextView
                     android:text="@string/all_phrases"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/icon_all_phrares"
-                    android:paddingLeft="@dimen/album_title_padding"
-                    android:paddingRight="@dimen/album_title_padding"
-                    android:paddingTop="@dimen/album_title_padding"
+                    android:layout_margin="5dp"
                     android:textAlignment="center"
-                    android:textColor="@color/album_title"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/album_title" />
             </RelativeLayout>
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
 
+    </LinearLayout>
     <android.support.v7.widget.RecyclerView
+        android:layout_margin="10dp"
         android:layout_below="@id/card_view"
         android:id="@+id/recycler_level"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
-
-
-</RelativeLayout>
+</LinearLayout>

@@ -12,6 +12,16 @@ public class Vocabulary extends RealmObject{
     private String vocabulary_vn;
     private String sound_vocabulary;
     private String vocabulary_karaoke;
+    private boolean isRemember = false;
+
+    public boolean isRemember() {
+        return isRemember;
+    }
+
+    public void setRemember(boolean remember) {
+        isRemember = remember;
+    }
+
     private boolean isFavorite = false;
 
     public boolean isFavorite() {

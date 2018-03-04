@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import com.bounthavong.vithaya.hoctienglao.config.Default;
 import com.bounthavong.vithaya.hoctienglao.fragments.PhrasesFragment;
+import com.bounthavong.vithaya.hoctienglao.fragments.StudyFragment;
 import com.bounthavong.vithaya.hoctienglao.json.ReadJson;
 import com.bounthavong.vithaya.hoctienglao.model.dao.LevelDAO;
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                     selectedFragment = PhrasesFragment.newInstance(true);
                     break;
                 case R.id.navigation_notifications:
-                    selectedFragment = PhrasesFragment.newInstance(false);
+                    selectedFragment = StudyFragment.newInstance();
                     break;
             }
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

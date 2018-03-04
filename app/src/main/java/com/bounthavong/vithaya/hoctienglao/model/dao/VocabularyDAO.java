@@ -2,6 +2,8 @@ package com.bounthavong.vithaya.hoctienglao.model.dao;
 
 import android.util.Log;
 
+import com.bounthavong.vithaya.hoctienglao.model.Category;
+import com.bounthavong.vithaya.hoctienglao.model.Level;
 import com.bounthavong.vithaya.hoctienglao.model.Vocabulary;
 
 import java.util.ArrayList;
@@ -62,5 +64,33 @@ public class VocabularyDAO {
             }
         }
         return realmList;
+    }
+    public void setRemember(final Vocabulary vocabulary, final boolean isRember){
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                vocabulary.setRemember(isRember);
+            }
+        });
+    }
+    public RealmList<Vocabulary> getJustNotRemember(RealmList<Vocabulary> vocabularies){
+        RealmList<Vocabulary> vocabularyRealmList = new RealmList<>();
+        for (Vocabulary vocabulary : vocabularies){
+            if (!vocabulary.isRemember()){
+                vocabularyRealmList.add(vocabulary);
+            }
+        }
+        return vocabularyRealmList;
+    }
+    public RealmList<Vocabulary> getallNotRemember(Level level){
+        RealmList<Vocabulary> vocabularies = new RealmList<>();
+            for (Category category : level.getCategories()){
+                for(Vocabulary vocabulary : category.getVocabularies()){
+                    if (!vocabulary.isRemember()){
+                        vocabularies.add(vocabulary);
+                    }
+                }
+            }
+        return vocabularies;
     }
 }

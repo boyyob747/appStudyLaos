@@ -25,6 +25,7 @@ import com.bounthavong.vithaya.hoctienglao.model.dao.VocabularyDAO;
 
 import org.greenrobot.eventbus.EventBus;
 
+import at.markushi.ui.CircleButton;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -42,9 +43,9 @@ public class PhrasesFragment extends Fragment {
     RecyclerView recyclerLevel;
     Unbinder unbinder;
     @BindView(R.id.icon_fav)
-    ImageView iconFav;
+    CircleButton iconFav;
     @BindView(R.id.icon_all_phrares)
-    ImageView iconAllPhrares;
+    CircleButton iconAllPhrares;
 
     private LevelAdapter levelAdapter;
     RealmResults<Level> levels;
