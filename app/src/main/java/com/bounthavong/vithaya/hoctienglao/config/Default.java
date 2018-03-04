@@ -7,4 +7,5 @@ package com.bounthavong.vithaya.hoctienglao.config;
 public class Default {
     public static final String SAVE_APP = "APP_LAOS";
     public static final String IS_FIRST_RUN = "IS_FIRST_RUN";
+    public static final String IS_QUIZ = "IS_QUIZ";
 }

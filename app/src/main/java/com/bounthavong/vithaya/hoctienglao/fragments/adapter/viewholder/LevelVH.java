@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.bounthavong.vithaya.hoctienglao.R;
 import com.bounthavong.vithaya.hoctienglao.activity.PhrasesActivity;
+import com.bounthavong.vithaya.hoctienglao.activity.QuizActivity;
 import com.bounthavong.vithaya.hoctienglao.evenbus.PharasesEvent;
 import com.bounthavong.vithaya.hoctienglao.fragments.adapter.CategoryAdapter;
 import com.bounthavong.vithaya.hoctienglao.fragments.adapter.listener.LAOTouchListener;
@@ -34,9 +35,11 @@ public class LevelVH extends RecyclerView.ViewHolder{
     RecyclerView mRecyclerCategory;
     Context context;
     CategoryAdapter categoryAdapter;
-    public LevelVH(View itemView,Context context) {
+    boolean isQuiz ;
+    public LevelVH(View itemView,Context context,boolean isQuiz) {
         super(itemView);
         this.context = context;
+        this.isQuiz = isQuiz;
         ButterKnife.bind(this,itemView);
     }
     public void bindData(final Level level){
@@ -59,11 +62,16 @@ public class LevelVH extends RecyclerView.ViewHolder{
 
             @Override
             public void onClick(View view, int position) {
-                PharasesEvent pharasesEvent = new PharasesEvent(level.getCategories().get(position).getVocabularies());
-                pharasesEvent.setTitle(level.getCategories().get(position).getName());
-                EventBus.getDefault().postSticky(pharasesEvent);
-                Intent intent = new Intent(context, PhrasesActivity.class);
-                context.startActivity(intent);
+                    PharasesEvent pharasesEvent = new PharasesEvent(level.getCategories().get(position).getVocabularies());
+                    pharasesEvent.setTitle(level.getCategories().get(position).getName());
+                    EventBus.getDefault().postSticky(pharasesEvent);
+                    Intent intent;
+                    if (!isQuiz){
+                        intent = new Intent(context, PhrasesActivity.class);
+                    }else{
+                        intent = new Intent(context, QuizActivity.class);
+                    }
+                    context.startActivity(intent);
             }
         }));
     }

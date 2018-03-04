@@ -84,7 +84,7 @@ public class PhrasesActivity extends AppCompatActivity {
     }
     //
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
-    public void onBranch(PharasesEvent pharasesEvent) {
+    public void onEvent(PharasesEvent pharasesEvent) {
         vocabularies = pharasesEvent.getVocabularies();
         title = pharasesEvent.getTitle();
         Log.i(TAG,"vocabularies size = " + vocabularies.size());

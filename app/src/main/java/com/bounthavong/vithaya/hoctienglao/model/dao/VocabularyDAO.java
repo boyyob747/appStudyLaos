@@ -1,8 +1,15 @@
 package com.bounthavong.vithaya.hoctienglao.model.dao;
 
+import android.util.Log;
+
 import com.bounthavong.vithaya.hoctienglao.model.Vocabulary;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import io.realm.Realm;
+import io.realm.RealmList;
 import io.realm.RealmResults;
 
 /**
@@ -28,5 +35,32 @@ public class VocabularyDAO {
                 vocabulary.setFavorite(!vocabulary.isFavorite());
             }
         });
+    }
+    public RealmList<Vocabulary> getVbRandom(RealmList<Vocabulary> vocabularieslist,int limit,int indexNext) {
+        RealmList<Vocabulary> vocabularies = vocabularieslist;
+        int maxSize = vocabularies.size();
+        Random random = new Random();
+        int randomNumber;
+        List<Integer> questionIds = new ArrayList<>();
+        RealmList<Vocabulary> realmList = new RealmList<>();
+        while (questionIds.size() < limit) {
+            randomNumber = random.nextInt(maxSize);
+            Log.i("TAG","Ran = "+randomNumber+ " indexNext = "+indexNext);
+            if (!questionIds.contains(randomNumber)) {
+                if (indexNext != -1){
+                    if (indexNext == randomNumber){
+
+                    }else{
+                        questionIds.add(randomNumber);
+                        realmList.add(vocabularies.get(randomNumber));
+                    }
+                }else{
+                    questionIds.add(randomNumber);
+                    realmList.add(vocabularies.get(randomNumber));
+                }
+
+            }
+        }
+        return realmList;
     }
 }

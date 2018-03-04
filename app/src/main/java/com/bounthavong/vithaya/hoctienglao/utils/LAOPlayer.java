@@ -28,4 +28,12 @@ public class LAOPlayer {
         }
         p.start();
     }
+    public boolean isPlaying(){
+        return p.isPlaying();
+    }
+    public void stopPlaying(){
+        if (p != null){
+            p.stop();
+        }
+    }
 }

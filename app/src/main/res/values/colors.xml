@@ -14,4 +14,7 @@
         <color name="divider">#BDBDBD</color>
     <color name="viewBg">#f1f5f8</color>
     <color name="album_title">#4c4c4c</color>
+    <color name="color_divider">#E0E0E0</color>
+    <color name="color_layout_bottom">#F5F5F5</color>
+    <color name="green">#10e73b</color>
 </resources>

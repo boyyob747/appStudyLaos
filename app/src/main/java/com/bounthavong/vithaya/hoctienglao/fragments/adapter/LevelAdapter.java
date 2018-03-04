@@ -15,17 +15,18 @@ import io.realm.RealmResults;
 public class LevelAdapter extends RecyclerView.Adapter<LevelVH>{
     RealmResults<Level> levels;
     Context context;
-    public LevelAdapter(RealmResults<Level> levels, Context context) {
+    boolean isQuiz;
+    public LevelAdapter(RealmResults<Level> levels, Context context,boolean isQuiz) {
         this.levels = levels;
         this.context = context;
+        this.isQuiz = isQuiz;
     }
 
     @Override
     public LevelVH onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_level, parent, false);
-
-        return new LevelVH(itemView,context);
+        return new LevelVH(itemView,context,isQuiz);
     }
 
     @Override

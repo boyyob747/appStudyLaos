@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
             Fragment selectedFragment = null;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    selectedFragment = PhrasesFragment.newInstance();
+                    selectedFragment = PhrasesFragment.newInstance(false);
                     break;
                 case R.id.navigation_dashboard:
-                    selectedFragment = PhrasesFragment.newInstance();
+                    selectedFragment = PhrasesFragment.newInstance(true);
                     break;
                 case R.id.navigation_notifications:
-                    selectedFragment = PhrasesFragment.newInstance();
+                    selectedFragment = PhrasesFragment.newInstance(false);
                     break;
             }
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void changeFragment() {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_layout, PhrasesFragment.newInstance());
+        transaction.replace(R.id.frame_layout, PhrasesFragment.newInstance(false));
         transaction.addToBackStack(null);
         transaction.commit();
         navigation.setSelectedItemId(R.id.navigation_home);
