@@ -73,7 +73,13 @@
             "sound_vocabulary": "ten"
           }
         ]
-      },{
+      }
+    ]
+  },
+  {
+    "name": "Du lịch cơ bản",
+    "categories": [
+      {
         "name": "Lời chào hỏi",
         "icon_img": "ic_chat_black_36dp",
         "vocabularies": [
@@ -168,81 +174,22 @@
             "sound_vocabulary": "i0015"
           },
           {
+            "vocabulary_lao": "ຂ້ອຍແມ່ນນັກສືກສາວິທະຍາໄລ",
+            "vocabulary_vn": "Tôi là sinh viên cao đăng",
+            "vocabulary_karaoke": "khoy pen nak suk sa witha yalai",
+            "sound_vocabulary": "i0016"
+          },
+          {
+            "vocabulary_lao": "ເຈົ້າແມ່ນນັກຮຽນ/ນັກສືກສາບໍ?",
+            "vocabulary_vn": "Bạn có phải là sinh viên không ?",
+            "vocabulary_karaoke": "chao maen nak hian/nak suksa bo",
+            "sound_vocabulary": "i0017"
+          },
+          {
             "vocabulary_lao": "ຢ່າລືມກັນເດີ!",
             "vocabulary_vn": "Hãy giữ liên lạc!",
             "vocabulary_karaoke": "yalum kan der",
-            "sound_vocabulary": "i0016"
-          }
-        ]
-      },{
-        "name": "Con số",
-        "icon_img": "ic_chat_black_36dp",
-        "vocabularies": [
-          {
-            "vocabulary_lao": "ສູນ",
-            "vocabulary_vn": "Không",
-            "vocabulary_karaoke": "sun",
-            "sound_vocabulary": "zero"
-          },
-          {
-            "vocabulary_lao": "ໜຶ່ງ",
-            "vocabulary_vn": "Một",
-            "vocabulary_karaoke": "nueng",
-            "sound_vocabulary": "one"
-          },
-          {
-            "vocabulary_lao": "ສອງ",
-            "vocabulary_vn": "Hai",
-            "vocabulary_karaoke": "song",
-            "sound_vocabulary": "two"
-          },
-          {
-            "vocabulary_lao": "ສາມ",
-            "vocabulary_vn": "Ba",
-            "vocabulary_karaoke": "saam",
-            "sound_vocabulary": "three"
-          },
-          {
-            "vocabulary_lao": "ສີ່",
-            "vocabulary_vn": "Bốn",
-            "vocabulary_karaoke": "sii",
-            "sound_vocabulary": "four"
-          },
-          {
-            "vocabulary_lao": "ຫ້າ",
-            "vocabulary_vn": "Năm",
-            "vocabulary_karaoke": "haa",
-            "sound_vocabulary": "five"
-          },
-          {
-            "vocabulary_lao": "ຫົກ",
-            "vocabulary_vn": "Sáu",
-            "vocabulary_karaoke": "hok",
-            "sound_vocabulary": "six"
-          },
-          {
-            "vocabulary_lao": "ເຈັດ",
-            "vocabulary_vn": "Bảy",
-            "vocabulary_karaoke": "jet",
-            "sound_vocabulary": "seven"
-          },
-          {
-            "vocabulary_lao": "ແປດ",
-            "vocabulary_vn": "Tám",
-            "vocabulary_karaoke": "bpaaet",
-            "sound_vocabulary": "eight"
-          },
-          {
-            "vocabulary_lao": "ເກົ້າ",
-            "vocabulary_vn": "Chín",
-            "vocabulary_karaoke": "gow",
-            "sound_vocabulary": "nine"
-          },
-          {
-            "vocabulary_lao": "ສິບ",
-            "vocabulary_vn": "Mười",
-            "vocabulary_karaoke": "sip",
-            "sound_vocabulary": "ten"
+            "sound_vocabulary": "i0018"
           }
         ]
       }

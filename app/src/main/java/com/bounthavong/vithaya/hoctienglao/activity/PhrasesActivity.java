@@ -1,6 +1,8 @@
 package com.bounthavong.vithaya.hoctienglao.activity;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
@@ -25,6 +27,9 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.RealmList;
@@ -35,8 +40,8 @@ public class PhrasesActivity extends AppCompatActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.recycler_phrases)
-    RecyclerView recyclerPhrases;
-    private PhrasesAdapter phrasesAdapter ;
+    public RecyclerView recyclerPhrases;
+    public PhrasesAdapter phrasesAdapter ;
     private RealmList<Vocabulary> vocabularies;
     private boolean isFirstClick = true;
     private int currentPosition = -1;
@@ -56,7 +61,7 @@ public class PhrasesActivity extends AppCompatActivity {
     }
     LinearLayout linearLayoutCurrent = null;
 
-    private void setWidget() {
+    public void setWidget() {
         laoPlayer = new LAOPlayer(this);
         if (vocabularies != null){
             phrasesAdapter = new PhrasesAdapter(vocabularies,this);
@@ -81,6 +86,7 @@ public class PhrasesActivity extends AppCompatActivity {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
         laoPlayer.stopPlaying();
+        stopTimerTask();
     }
 
     @Override
@@ -102,12 +108,49 @@ public class PhrasesActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_play,menu);
         return true;
     }
+    Timer timer;
+    TimerTask timerTask;
+    int index = 0;
+    final Handler handler = new Handler();
 
+    private void initializeTimerTask() {
+        timerTask = new TimerTask() {
+            public void run() {
+                //use a handler to run process
+                handler.post(new Runnable() {
+                    public void run() {
+                        recyclerPhrases.findViewHolderForAdapterPosition(index).itemView.performClick();
+                        index = index + 1;
+                        if (index == vocabularies.size()){
+                            stopTimerTask();
+                        }
+                    }
+                });
+            }
+        };
+    }
+
+    private void startTimer() {
+        timer = new Timer();
+        initializeTimerTask();
+        timer.schedule(timerTask, 0, 3000); //
+    }
+
+    private void stopTimerTask() {
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
+    }
+    public void auto(){
+        index = 0;
+        startTimer();
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
             case R.id.menu_play :
-                Snackbar.make(getCurrentFocus(),"Cliked",Snackbar.LENGTH_LONG).show();
+                auto();
                 return true;
             default:
                 finish();
