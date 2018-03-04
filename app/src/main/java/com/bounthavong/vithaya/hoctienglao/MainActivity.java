@@ -66,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
         changeFragment();
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
+    }
+
     private void changeFragment() {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout, PhrasesFragment.newInstance(false));
