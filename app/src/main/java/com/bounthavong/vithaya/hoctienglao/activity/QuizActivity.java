@@ -91,7 +91,7 @@ public class QuizActivity extends AppCompatActivity {
         recyclerQuiz.addItemDecoration(itemDecoration);
         vocabularyDAO = new VocabularyDAO(Realm.getDefaultInstance());
         vocabulariesRandom = vocabularyDAO.getVbRandom(vocabularies, vocabularies.size() < 10 ? vocabularies.size() : 10,-1);
-        numberProgressBar.setMax(vocabularies.size() - 1);
+        numberProgressBar.setMax(vocabulariesRandom.size() - 1);
         Log.i(TAG,"vocabulariesRandom size = "+vocabulariesRandom.size());
         Log.i(TAG,"vocabulariesRandom "+vocabulariesRandom.toString());
         vocabulary = vocabulariesRandom.first();
