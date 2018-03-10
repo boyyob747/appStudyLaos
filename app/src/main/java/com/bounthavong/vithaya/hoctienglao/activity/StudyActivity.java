@@ -99,6 +99,9 @@ public class StudyActivity extends AppCompatActivity {
     public void setData(boolean isRember){
         if (isRember){
             vocabularies = vocabularyDAO.getJustNotRemember(vocabularies);
+            if (vocabularies == null || vocabularies.isEmpty()){
+                finish();
+            }
         }
         ++index;
         if (index == vocabularies.size()){

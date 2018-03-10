@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bounthavong.vithaya.hoctienglao.R;
 import com.bounthavong.vithaya.hoctienglao.activity.listener.ItemRecyclerClickListener;
@@ -34,14 +35,11 @@ public class StudyVH extends RecyclerView.ViewHolder implements View.OnClickList
         this.context = context;
         vocabularyDAO = new VocabularyDAO(Realm.getDefaultInstance());
         ButterKnife.bind(this,itemView);
-        itemView.setOnClickListener(this);
-
     }
     public void bindData(final Level level){
         mTxtNameLevel.setText(level.getName());
         int size = vocabularyDAO.getallNotRemember(level).size();
-        Log.i("Size " , "="+size);
-        mTxtCountVB.setText(context.getResources().getString(R.string.cac_tu,size));
+        itemView.setOnClickListener(this);
     }
 
     @Override

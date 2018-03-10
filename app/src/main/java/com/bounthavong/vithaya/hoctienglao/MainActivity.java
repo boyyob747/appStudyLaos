@@ -1,6 +1,7 @@
 package com.bounthavong.vithaya.hoctienglao;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,8 +10,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
+import android.view.Menu;
 import android.view.MenuItem;
 
+import com.bounthavong.vithaya.hoctienglao.activity.PhrasesActivity;
 import com.bounthavong.vithaya.hoctienglao.config.Default;
 import com.bounthavong.vithaya.hoctienglao.fragments.PhrasesFragment;
 import com.bounthavong.vithaya.hoctienglao.fragments.StudyFragment;
@@ -70,6 +73,25 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         finish();
         super.onBackPressed();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_search, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_search:
+                Intent intent = new Intent(this, PhrasesActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                finish();
+                return true;
+        }
     }
 
     private void changeFragment() {

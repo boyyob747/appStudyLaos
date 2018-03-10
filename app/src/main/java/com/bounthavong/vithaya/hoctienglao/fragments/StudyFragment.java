@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.bounthavong.vithaya.hoctienglao.R;
 import com.bounthavong.vithaya.hoctienglao.activity.StudyActivity;
@@ -76,12 +77,17 @@ public class StudyFragment extends Fragment {
             public void onClick(View view, int position) {
                 VocabularyDAO vocabularyDAO = new VocabularyDAO(Realm.getDefaultInstance());
                 RealmList<Vocabulary> vocabularies = vocabularyDAO.getallNotRemember(levels.get(position));
-                RealmList<Vocabulary> ranDomVB = vocabularyDAO.getVbRandom(vocabularies,vocabularies.size(),-1);
-                PharasesEvent pharasesEvent = new PharasesEvent(ranDomVB);
-                pharasesEvent.setTitle(levels.get(position).getName());
-                EventBus.getDefault().postSticky(pharasesEvent);
-                Intent intent = new Intent(getContext(), StudyActivity.class);
-                startActivityForResult(intent,101);
+                if (vocabularies.size() < 0){
+                    Toast.makeText(getContext(),"Bạn đã học hết từ rồi !",Toast.LENGTH_SHORT).show();
+                }else{
+                    RealmList<Vocabulary> ranDomVB = vocabularyDAO.getVbRandom(vocabularies,vocabularies.size(),-1);
+                    PharasesEvent pharasesEvent = new PharasesEvent(ranDomVB);
+                    pharasesEvent.setTitle(levels.get(position).getName());
+                    EventBus.getDefault().postSticky(pharasesEvent);
+                    Intent intent = new Intent(getContext(), StudyActivity.class);
+                    startActivityForResult(intent,101);
+                }
+
             }
         });
 
