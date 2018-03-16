@@ -5,10 +5,13 @@ import android.util.Log;
 import com.bounthavong.vithaya.hoctienglao.model.Category;
 import com.bounthavong.vithaya.hoctienglao.model.Level;
 import com.bounthavong.vithaya.hoctienglao.model.Vocabulary;
+import com.bounthavong.vithaya.hoctienglao.webservices.model.Data;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmList;
@@ -23,40 +26,27 @@ public class LevelDAO {
     public LevelDAO(Realm realm) {
         this.realm = realm;
     }
-    public void saveData(final String json){
+    public void saveData(final List<Data> datas){
 
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                JSONArray jObject = null;
                 try {
-                    jObject = new JSONArray(json);
-                    for (int i = 0 ; i < jObject.length() ; i++){
-                        JSONObject levelObject = jObject.getJSONObject(i);
-                        String nameLevel = levelObject.getString("name");
+                    for (Data data : datas ){
                         Level level = realm.createObject(Level.class);
-                        level.setName(nameLevel);
-                        JSONArray arrayCategories = levelObject.getJSONArray("categories");
+                        level.setName(data.getName());
                         RealmList<Category> categories = new RealmList<>();
-                        for (int j = 0 ;j < arrayCategories.length() ; j++){
-                            JSONObject categoriesObject = arrayCategories.getJSONObject(j);
+                        for (Data.CategoriesBean categoriesBean : data.getCategories()){
                             Category category = realm.createObject(Category.class);
-                            String nameCategories = categoriesObject.getString("name");
-                            String icon_img = categoriesObject.getString("icon_img");
-                            category.setName(nameCategories);
-                            category.setIcon_img(icon_img);
+                            category.setName(categoriesBean.getName());
+                            category.setIcon_img(categoriesBean.getUrl_img());
                             RealmList<Vocabulary> vocabularies = new RealmList<>();
-                            JSONArray arrayVocabularies = categoriesObject.getJSONArray("vocabularies");
-                            for (int k = 0 ; k < arrayVocabularies.length() ; k++){
+                            for (Data.CategoriesBean.VocabulariesBean vocabulariesBean : categoriesBean.getVocabularies()){
                                 Vocabulary vocabulary = realm.createObject(Vocabulary.class);
-                                String vocabulary_lao = arrayVocabularies.getJSONObject(k).getString("vocabulary_lao");
-                                String vocabulary_vn = arrayVocabularies.getJSONObject(k).getString("vocabulary_vn");
-                                String vocabulary_karaoke = arrayVocabularies.getJSONObject(k).getString("vocabulary_karaoke");
-                                String sound_vocabulary =  arrayVocabularies.getJSONObject(k).getString("sound_vocabulary");
-                                vocabulary.setVocabulary_lao(vocabulary_lao);
-                                vocabulary.setVocabulary_vn(vocabulary_vn);
-                                vocabulary.setVocabulary_karaoke(vocabulary_karaoke);
-                                vocabulary.setSound_vocabulary(sound_vocabulary);
+                                vocabulary.setVocabulary_lao(vocabulariesBean.getVb_lao());
+                                vocabulary.setVocabulary_vn(vocabulariesBean.getVb_vn());
+                                vocabulary.setVocabulary_karaoke(vocabulariesBean.getVb_karaoke());
+                                vocabulary.setSound_vocabulary(vocabulariesBean.getUrl_mp3());
                                 vocabularies.add(vocabulary);
                             }
                             category.setVocabularies(vocabularies);
@@ -64,7 +54,7 @@ public class LevelDAO {
                         }
                         level.setCategories(categories);
                     }
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }

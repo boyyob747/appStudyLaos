@@ -21,14 +21,23 @@ import com.bounthavong.vithaya.hoctienglao.evenbus.PharasesEvent;
 import com.bounthavong.vithaya.hoctienglao.fragments.adapter.LevelAdapter;
 import com.bounthavong.vithaya.hoctienglao.model.Level;
 import com.bounthavong.vithaya.hoctienglao.model.Vocabulary;
+import com.bounthavong.vithaya.hoctienglao.model.dao.LevelDAO;
 import com.bounthavong.vithaya.hoctienglao.model.dao.VocabularyDAO;
+import com.bounthavong.vithaya.hoctienglao.webservices.RetrofitClient;
+import com.bounthavong.vithaya.hoctienglao.webservices.model.Data;
+import com.bounthavong.vithaya.hoctienglao.webservices.model.dao.DataDAO;
 
 import org.greenrobot.eventbus.EventBus;
+
+import java.util.List;
 
 import at.markushi.ui.CircleButton;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import io.reactivex.Observable;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.observers.ResourceObserver;
 import io.realm.Realm;
 import io.realm.RealmList;
 import io.realm.RealmResults;
@@ -51,6 +60,8 @@ public class PhrasesFragment extends Fragment {
     RealmResults<Level> levels;
     Realm realm;
     boolean isQuiz = false;
+
+
     public static PhrasesFragment newInstance(boolean isQuiz) {
         PhrasesFragment fragment = new PhrasesFragment();
         Bundle bundle = new Bundle();
@@ -77,6 +88,8 @@ public class PhrasesFragment extends Fragment {
         setWidget();
         return view;
     }
+
+
 
     private void setWidget() {
         levels = realm.where(Level.class).findAll();

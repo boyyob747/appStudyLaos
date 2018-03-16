@@ -77,7 +77,7 @@ public class StudyFragment extends Fragment {
             public void onClick(View view, int position) {
                 VocabularyDAO vocabularyDAO = new VocabularyDAO(Realm.getDefaultInstance());
                 RealmList<Vocabulary> vocabularies = vocabularyDAO.getallNotRemember(levels.get(position));
-                if (vocabularies.size() < 0){
+                if (vocabularies.size() == 0){
                     Toast.makeText(getContext(),"Bạn đã học hết từ rồi !",Toast.LENGTH_SHORT).show();
                 }else{
                     RealmList<Vocabulary> ranDomVB = vocabularyDAO.getVbRandom(vocabularies,vocabularies.size(),-1);

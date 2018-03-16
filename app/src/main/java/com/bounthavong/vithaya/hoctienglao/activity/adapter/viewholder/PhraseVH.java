@@ -59,7 +59,7 @@ public class PhraseVH extends RecyclerView.ViewHolder implements View.OnClickLis
             @Override
             public void onClick(View view) {
                 laoPlayer.stopPlaying();
-                laoPlayer.playSound(vocabulary.getSound_vocabulary());
+                laoPlayer.playUrl(vocabulary.getSound_vocabulary());
             }
         });
 

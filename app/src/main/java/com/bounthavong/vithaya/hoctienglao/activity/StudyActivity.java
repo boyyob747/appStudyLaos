@@ -46,6 +46,7 @@ public class StudyActivity extends AppCompatActivity {
     private Vocabulary vocabulary;
     private int index = 0;
     private VocabularyDAO vocabularyDAO;
+    Realm realm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +57,7 @@ public class StudyActivity extends AppCompatActivity {
         setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         vocabularyDAO = new VocabularyDAO(Realm.getDefaultInstance());
+        realm = Realm.getDefaultInstance();
         if (vocabulary != null){
             txtVocabularyLao.setText(vocabulary.getVocabulary_lao());
             txtVocabularyKaraoke.setText(vocabulary.getVocabulary_karaoke());
@@ -98,7 +100,10 @@ public class StudyActivity extends AppCompatActivity {
     }
     public void setData(boolean isRember){
         if (isRember){
-            vocabularies = vocabularyDAO.getJustNotRemember(vocabularies);
+            RealmList<Vocabulary> bb =new RealmList<>();
+            bb.addAll(vocabularyDAO.getAllVocabulary());
+            vocabularies = vocabularyDAO.getJustNotRemember(bb);
+            index = 0;
             if (vocabularies == null || vocabularies.isEmpty()){
                 finish();
             }
@@ -132,7 +137,7 @@ public class StudyActivity extends AppCompatActivity {
     public void onViewClicked() {
         if (vocabulary != null){
             laoPlayer.stopPlaying();
-            laoPlayer.playSound(vocabulary.getSound_vocabulary());
+            laoPlayer.playUrl(vocabulary.getSound_vocabulary());
         }
     }
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)

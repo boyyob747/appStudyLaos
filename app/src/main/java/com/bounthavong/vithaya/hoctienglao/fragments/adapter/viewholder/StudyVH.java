@@ -39,6 +39,7 @@ public class StudyVH extends RecyclerView.ViewHolder implements View.OnClickList
     public void bindData(final Level level){
         mTxtNameLevel.setText(level.getName());
         int size = vocabularyDAO.getallNotRemember(level).size();
+        mTxtCountVB.setText(context.getResources().getString(R.string.cac_tu,size));
         itemView.setOnClickListener(this);
     }
 

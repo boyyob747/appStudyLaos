@@ -7,9 +7,14 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.bounthavong.vithaya.hoctienglao.R;
+import com.bounthavong.vithaya.hoctienglao.config.Default;
 import com.bounthavong.vithaya.hoctienglao.json.ReadJson;
+
 import com.bounthavong.vithaya.hoctienglao.model.Category;
 import com.bounthavong.vithaya.hoctienglao.utils.Utils;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 
 import at.markushi.ui.CircleButton;
 import butterknife.BindView;
@@ -30,7 +35,9 @@ public class CategoryVH extends RecyclerView.ViewHolder{
     }
     public void bindData(final Category category){
         mTxtNameCategory.setText(category.getName());
-//        mImgIcon.setImageDrawable(view.getResources().getDrawable(R.drawable.ic_bookmark_red_300_24dp));
-        mImgIcon.setImageResource(Utils.getIdimgWithString(category.getIcon_img(),context));
+        RequestOptions requestOptions = new RequestOptions();
+        requestOptions.diskCacheStrategy(DiskCacheStrategy.NONE);
+        Glide.with(itemView).load(Default.URL_IMAGE + category.getIcon_img()).apply(requestOptions)
+                .into(mImgIcon);
     }
 }

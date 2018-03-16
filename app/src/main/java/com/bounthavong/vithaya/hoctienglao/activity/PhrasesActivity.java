@@ -1,5 +1,6 @@
 package com.bounthavong.vithaya.hoctienglao.activity;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
@@ -20,14 +21,20 @@ import android.widget.LinearLayout;
 import com.bounthavong.vithaya.hoctienglao.R;
 import com.bounthavong.vithaya.hoctienglao.activity.adapter.PhrasesAdapter;
 import com.bounthavong.vithaya.hoctienglao.activity.listener.ItemRecyclerClickListener;
+import com.bounthavong.vithaya.hoctienglao.config.Default;
 import com.bounthavong.vithaya.hoctienglao.evenbus.PharasesEvent;
 import com.bounthavong.vithaya.hoctienglao.model.Vocabulary;
 import com.bounthavong.vithaya.hoctienglao.utils.LAOPlayer;
+import com.thin.downloadmanager.DefaultRetryPolicy;
+import com.thin.downloadmanager.DownloadRequest;
+import com.thin.downloadmanager.DownloadStatusListener;
+import com.thin.downloadmanager.ThinDownloadManager;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -53,7 +60,6 @@ public class PhrasesActivity extends AppCompatActivity {
     Button btnSearch;
     @BindView(R.id.layout_search)
     LinearLayout layoutSearch;
-
     private RealmList<Vocabulary> vocabularies;
     private boolean isFirstClick = true;
     private int currentPosition = -1;
@@ -90,7 +96,7 @@ public class PhrasesActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view, int position) {
                     laoPlayer.stopPlaying();
-                    laoPlayer.playSound(vocabularies.get(position).getSound_vocabulary());
+                    laoPlayer.playUrl(vocabularies.get(position).getSound_vocabulary());
                 }
             });
         } else {
@@ -120,7 +126,7 @@ public class PhrasesActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(View view, int position) {
                                     laoPlayer.stopPlaying();
-                                    laoPlayer.playSound(vocabularies.get(position).getSound_vocabulary());
+                                    laoPlayer.playUrl(vocabularies.get(position).getSound_vocabulary());
                                 }
                             });
                         }

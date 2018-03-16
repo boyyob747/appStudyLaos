@@ -2,12 +2,11 @@ package com.bounthavong.vithaya.hoctienglao.fragments.adapter.viewholder;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
+
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.util.TypedValue;
+
 import android.view.View;
 import android.widget.TextView;
 

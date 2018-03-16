@@ -38,6 +38,14 @@ public class VocabularyDAO {
             }
         });
     }
+    public void setMp3Path(final Vocabulary vocabulary, final String filePath){
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                vocabulary.setSound_vocabulary(filePath);
+            }
+        });
+    }
     public RealmList<Vocabulary> getVbRandom(RealmList<Vocabulary> vocabularieslist,int limit,int indexNext) {
         RealmList<Vocabulary> vocabularies = vocabularieslist;
         int maxSize = vocabularies.size();

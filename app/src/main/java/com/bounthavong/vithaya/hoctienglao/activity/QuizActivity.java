@@ -100,7 +100,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 laoPlayer.stopPlaying();
-                laoPlayer.playSound(soundVb);
+                laoPlayer.playUrl(soundVb);
             }
         });
 

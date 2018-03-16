@@ -17,7 +17,16 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
     </FrameLayout>
-
+    <com.wang.avi.AVLoadingIndicatorView
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/avi_loding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/AVLoadingIndicatorView"
+        app:indicatorName="LineSpinFadeLoaderIndicator"
+        app:indicatorColor="@color/colorAccent"
+        />
     <android.support.design.widget.BottomNavigationView
         android:layout_alignParentBottom="true"
         android:id="@+id/navigation"
