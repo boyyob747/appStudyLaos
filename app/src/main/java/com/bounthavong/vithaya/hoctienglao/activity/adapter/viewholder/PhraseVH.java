@@ -52,9 +52,9 @@ public class PhraseVH extends RecyclerView.ViewHolder implements View.OnClickLis
         itemView.setOnClickListener(this);
     }
     public void bindData(final Vocabulary vocabulary){
-        mTxtVbLao.setText(vocabulary.getVocabulary_lao());
+        mTxtVbLao.setText(vocabulary.getVocabulary_vn());
         mTxtVbKara.setText(vocabulary.getVocabulary_karaoke());
-        mTxtVbVN.setText(vocabulary.getVocabulary_vn());
+        mTxtVbVN.setText(vocabulary.getVocabulary_lao());
         mBtnPlayAudio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

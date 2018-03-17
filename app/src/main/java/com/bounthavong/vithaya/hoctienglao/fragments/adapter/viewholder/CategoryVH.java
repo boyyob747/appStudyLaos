@@ -3,6 +3,7 @@ package com.bounthavong.vithaya.hoctienglao.fragments.adapter.viewholder;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -37,7 +38,8 @@ public class CategoryVH extends RecyclerView.ViewHolder{
         mTxtNameCategory.setText(category.getName());
         RequestOptions requestOptions = new RequestOptions();
         requestOptions.diskCacheStrategy(DiskCacheStrategy.NONE);
-        Glide.with(itemView).load(Default.URL_IMAGE + category.getIcon_img()).apply(requestOptions)
+        Log.d("MainActivity","url img = " + Default.URL_IMAGE + category.getIcon_img());
+        Glide.with(itemView).load(Default.URL_IMAGE + category.getIcon_img())
                 .into(mImgIcon);
     }
 }

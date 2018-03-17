@@ -13,7 +13,6 @@
                 android:id="@+id/icon_category"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:tint="@color/bb"
                 card_view:cb_color="@color/colorPrimary"
                 app:cb_pressedRingWidth="8dip" />
             <TextView
