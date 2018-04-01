@@ -1,5 +1,6 @@
 package com.bounthavong.vithaya.hoctienglao.evenbus;
 
+import com.bounthavong.vithaya.hoctienglao.model.Level;
 import com.bounthavong.vithaya.hoctienglao.model.Vocabulary;
 
 import io.realm.RealmList;
@@ -11,6 +12,15 @@ import io.realm.RealmList;
 public class PharasesEvent {
     private RealmList<Vocabulary> vocabularies;
     private String title;
+    private Level level;
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
+    }
 
     public String getTitle() {
         return title;

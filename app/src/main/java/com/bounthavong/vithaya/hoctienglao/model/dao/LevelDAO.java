@@ -65,4 +65,12 @@ public class LevelDAO {
         levels.addAll(realm.where(Level.class).findAll());
         return levels;
     }
+    public void setDiem(final float diem, final Level level){
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                level.setDiem(diem);
+            }
+        });
+    }
 }

@@ -34,12 +34,13 @@ public class CategoryVH extends RecyclerView.ViewHolder{
         this.context = context;
         ButterKnife.bind(this,itemView);
     }
-    public void bindData(final Category category){
-        mTxtNameCategory.setText(category.getName());
-        RequestOptions requestOptions = new RequestOptions();
-        requestOptions.diskCacheStrategy(DiskCacheStrategy.NONE);
+    public void bindData(final Category category,int position){
+        String name = itemView.getResources().getString(R.string.bai_hoc,position+1) + " " + category.getName();
+        mTxtNameCategory.setText(name);
+//        RequestOptions requestOptions = new RequestOptions();
+//        requestOptions.diskCacheStrategy(DiskCacheStrategy.NONE);
         Log.d("MainActivity","url img = " + Default.URL_IMAGE + category.getIcon_img());
-        Glide.with(itemView).load(Default.URL_IMAGE + category.getIcon_img())
-                .into(mImgIcon);
+//        Glide.with(itemView).load(Default.URL_IMAGE + category.getIcon_img())
+//                .into(mImgIcon);
     }
 }

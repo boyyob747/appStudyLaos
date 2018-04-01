@@ -38,8 +38,12 @@ public class StudyVH extends RecyclerView.ViewHolder implements View.OnClickList
     }
     public void bindData(final Level level){
         mTxtNameLevel.setText(level.getName());
-        int size = vocabularyDAO.getallNotRemember(level).size();
-        mTxtCountVB.setText(context.getResources().getString(R.string.cac_tu,size));
+        if (level.getDiem() != -1){
+            mTxtCountVB.setText(context.getResources().getString(R.string.ket_qua_kiem_tra_la,level.getDiem()));
+        }else{
+            mTxtCountVB.setText(context.getResources().getString(R.string.ban_chua_kiem_tra));
+        }
+
         itemView.setOnClickListener(this);
     }
 

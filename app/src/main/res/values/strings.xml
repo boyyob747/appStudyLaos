@@ -4,9 +4,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-    <string name="title_phrases">Các cụm từ</string>
-    <string name="title_quiz">Câu đố</string>
-    <string name="title_study">Học tập</string>
+    <string name="title_phrases">Các bài học cơ bản</string>
+    <string name="title_quiz">Thực hành</string>
+    <string name="title_study">Bài kiểm tra</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -14,7 +14,7 @@
     <string name="title_fav">Ưa thích</string>
     <string name="all_phrases">Tất cả cum từ</string>
     <string name="fav">Ưa thích</string>
-    <string name="cau_do_da_hoan_thanh">Câu đố đã hoàn thành</string>
+    <string name="cau_do_da_hoan_thanh">Câu hỏi đã hoàn thành</string>
     <string name="ban_da_tren_dap_an_dunng">Bạn đã chọn đúng %d trên %d đáp án đúng !</string>
     <string name="play">Play</string>
     <string name="cac_tu">Các từ còn chưa chưa nhớ : %d từ</string>
@@ -22,4 +22,10 @@
     <string name="not_remember">Chưa nhớ</string>
     <string name="show">Hiện thị câu trả lờ</string>
     <string name="tim_all">Tìm tất cả các từ</string>
+    <string name="kiem_tra">Kiểm tra</string>
+    <string name="submit">Submit</string>
+    <string name="ket_qua_kiem_tra_la">Kết quả kiểm trả là %.1f/10 điểm</string>
+    <string name="ban_chua_kiem_tra">Bạn chưa kiểm tra</string>
+    <string name="kiem_tra_da_hoan_thanh">Kiểm tra đã hoàn thành</string>
+    <string name="bai_hoc">Bài học số %d : </string>
 </resources>

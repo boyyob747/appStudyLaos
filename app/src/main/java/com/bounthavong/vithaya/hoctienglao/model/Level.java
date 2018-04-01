@@ -11,6 +11,7 @@ import io.realm.annotations.PrimaryKey;
 public class Level extends RealmObject{
 
     private String name;
+    private float diem = -1;
     private RealmList<Category> categories;
 
     public RealmList<Category> getCategories() {
@@ -27,6 +28,14 @@ public class Level extends RealmObject{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public float getDiem() {
+        return diem;
+    }
+
+    public void setDiem(float diem) {
+        this.diem = diem;
     }
 
     @Override

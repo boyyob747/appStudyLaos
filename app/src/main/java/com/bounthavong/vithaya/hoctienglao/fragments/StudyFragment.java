@@ -14,11 +14,13 @@ import android.widget.Toast;
 
 import com.bounthavong.vithaya.hoctienglao.R;
 import com.bounthavong.vithaya.hoctienglao.activity.StudyActivity;
+import com.bounthavong.vithaya.hoctienglao.activity.TestActivity;
 import com.bounthavong.vithaya.hoctienglao.activity.listener.ItemRecyclerClickListener;
 import com.bounthavong.vithaya.hoctienglao.evenbus.PharasesEvent;
 import com.bounthavong.vithaya.hoctienglao.fragments.adapter.StudyAdapter;
 import com.bounthavong.vithaya.hoctienglao.fragments.adapter.listener.LAOTouchListener;
 import com.bounthavong.vithaya.hoctienglao.fragments.adapter.viewholder.StudyVH;
+import com.bounthavong.vithaya.hoctienglao.model.Category;
 import com.bounthavong.vithaya.hoctienglao.model.Level;
 import com.bounthavong.vithaya.hoctienglao.model.Vocabulary;
 import com.bounthavong.vithaya.hoctienglao.model.dao.LevelDAO;
@@ -60,6 +62,7 @@ public class StudyFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
         levels = new RealmList<>();
         levelDAO = new LevelDAO(Realm.getDefaultInstance());
+        getActivity().setTitle(getResources().getString(R.string.title_study));
         setWidget();
         return view;
     }
@@ -76,18 +79,17 @@ public class StudyFragment extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 VocabularyDAO vocabularyDAO = new VocabularyDAO(Realm.getDefaultInstance());
-                RealmList<Vocabulary> vocabularies = vocabularyDAO.getallNotRemember(levels.get(position));
-                if (vocabularies.size() == 0){
-                    Toast.makeText(getContext(),"Bạn đã học hết từ rồi !",Toast.LENGTH_SHORT).show();
-                }else{
-                    RealmList<Vocabulary> ranDomVB = vocabularyDAO.getVbRandom(vocabularies,vocabularies.size(),-1);
-                    PharasesEvent pharasesEvent = new PharasesEvent(ranDomVB);
-                    pharasesEvent.setTitle(levels.get(position).getName());
-                    EventBus.getDefault().postSticky(pharasesEvent);
-                    Intent intent = new Intent(getContext(), StudyActivity.class);
-                    startActivityForResult(intent,101);
+                RealmList<Vocabulary> vocabularies = new RealmList<>();
+                for (Category category : levels.get(position).getCategories()){
+                    vocabularies.addAll(category.getVocabularies());
                 }
-
+                Log.wtf(TAG,vocabularies.size() + " GG");
+                PharasesEvent pharasesEvent = new PharasesEvent(vocabularies);
+                pharasesEvent.setVocabularies(vocabularies);
+                pharasesEvent.setLevel(levels.get(position));
+                EventBus.getDefault().postSticky(pharasesEvent);
+                Intent intent = new Intent(getContext(), TestActivity.class);
+                startActivityForResult(intent,101);
             }
         });
 

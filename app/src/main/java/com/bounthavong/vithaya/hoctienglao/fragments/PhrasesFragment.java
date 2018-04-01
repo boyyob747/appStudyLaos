@@ -84,6 +84,11 @@ public class PhrasesFragment extends Fragment {
         if (bundle != null){
             isQuiz = bundle.getBoolean(Default.IS_QUIZ);
         }
+        if (isQuiz){
+            getActivity().setTitle(getResources().getString(R.string.title_quiz));
+        }else{
+            getActivity().setTitle(getResources().getString(R.string.title_phrases));
+        }
         Log.i(TAG,"isQuiz = "+isQuiz);
         setWidget();
         return view;

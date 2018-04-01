@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import android.view.View;
@@ -44,9 +46,12 @@ public class LevelVH extends RecyclerView.ViewHolder{
     public void bindData(final Level level){
         mTxtName.setText(level.getName());
         categoryAdapter = new CategoryAdapter(level.getCategories(),context);
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
-        mRecyclerCategory.setLayoutManager(mLayoutManager);
-        mRecyclerCategory.setItemAnimator(new DefaultItemAnimator());
+//        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
+//        mRecyclerCategory.setLayoutManager(mLayoutManager);
+//        mRecyclerCategory.setItemAnimator(new DefaultItemAnimator());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+        mRecyclerCategory.setHasFixedSize(true);
+        mRecyclerCategory.setLayoutManager(layoutManager);
         mRecyclerCategory.setAdapter(categoryAdapter);
         mRecyclerCategory.addOnItemTouchListener(new LAOTouchListener(context, mRecyclerCategory, new LAOTouchListener.OnTouchActionListener() {
             @Override

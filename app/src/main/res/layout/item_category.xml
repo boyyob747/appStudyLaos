@@ -13,9 +13,13 @@
                 android:id="@+id/icon_category"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                card_view:cb_color="@color/colorPrimary"
-                app:cb_pressedRingWidth="8dip" />
+                card_view:cb_color="@android:color/transparent"
+                app:cb_pressedRingWidth="1dip"
+                android:visibility="gone"
+                />
             <TextView
+                android:textStyle="bold"
+                android:layout_margin="5dp"
                 android:id="@+id/name_category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -23,8 +27,6 @@
                 android:paddingLeft="@dimen/album_title_padding"
                 android:paddingRight="@dimen/album_title_padding"
                 android:paddingTop="@dimen/album_title_padding"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/album_title" />
         </RelativeLayout>
 
