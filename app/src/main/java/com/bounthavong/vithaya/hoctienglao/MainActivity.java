@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bounthavong.vithaya.hoctienglao.activity.PhrasesActivity;
@@ -57,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
     private RealmList<Vocabulary> vocabularies = new RealmList<>();
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment selectedFragment = null;
@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
             transaction.commit();
             return true;
         }
-
     };
 
     @Override
@@ -91,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
         downloadManager = new ThinDownloadManager();
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//        TextView textView = (TextView) navigation.findViewById(R.id.navigation_home).findViewById(R.id.largeLabel);
+//        textView.setTextSize(16);
         if (isFirstRun) {
             Toast.makeText(this,"Đang tải dữ liệu hãy đợi",Toast.LENGTH_LONG).show();
             aviLoding.show();
