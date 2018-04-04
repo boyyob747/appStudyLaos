@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
     private void downloadMp3(final Vocabulary vocabulary){
         try{
             Uri downloadUri = Uri.parse(Default.URL_MP3 + vocabulary.getSound_vocabulary());
-            Uri destinationUri = Uri.parse(this.getExternalCacheDir().toString()+"/"+index+(index + 1)+vocabulary.getSound_vocabulary());
+            Uri destinationUri = Uri.parse(this.getExternalCacheDir().toString()+"/"+index+(index + 1)+".mp3");
             DownloadRequest downloadRequest = new DownloadRequest(downloadUri)
                     .setRetryPolicy(new DefaultRetryPolicy())
                     .setDestinationURI(destinationUri).setPriority(DownloadRequest.Priority.HIGH)
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                     .setDownloadListener(new DownloadStatusListener() {
                         @Override
                         public void onDownloadComplete(int id) {
-                            String filePath = getApplication().getExternalCacheDir().toString()+"/"+index+(index + 1)+vocabulary.getSound_vocabulary();
+                            String filePath = getApplication().getExternalCacheDir().toString()+"/"+index+(index + 1)+".mp3";
                             Log.d(TAG,"filePath = " + filePath);
                             vocabularyDAO.setMp3Path(vocabulary,filePath);
                             ++index;
