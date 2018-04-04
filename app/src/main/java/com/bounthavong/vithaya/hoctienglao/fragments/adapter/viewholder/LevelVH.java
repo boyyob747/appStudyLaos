@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bounthavong.vithaya.hoctienglao.R;
 import com.bounthavong.vithaya.hoctienglao.activity.PhrasesActivity;
@@ -69,13 +70,19 @@ public class LevelVH extends RecyclerView.ViewHolder{
                     PharasesEvent pharasesEvent = new PharasesEvent(level.getCategories().get(position).getVocabularies());
                     pharasesEvent.setTitle(level.getCategories().get(position).getName());
                     EventBus.getDefault().postSticky(pharasesEvent);
-                    Intent intent;
+                    Intent intent = null;
                     if (!isQuiz){
                         intent = new Intent(context, PhrasesActivity.class);
                     }else{
-                        intent = new Intent(context, QuizActivity.class);
+                        if (level.getCategories().get(position).getVocabularies().size() >= 5){
+                            intent = new Intent(context, QuizActivity.class);
+                        }else{
+                            Toast.makeText(context,"Vocabulary < 5",Toast.LENGTH_SHORT).show();
+                        }
                     }
-                    context.startActivity(intent);
+                    if (intent != null){
+                        context.startActivity(intent);
+                    }
             }
         }));
     }

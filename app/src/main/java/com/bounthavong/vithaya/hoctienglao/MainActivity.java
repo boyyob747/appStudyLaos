@@ -149,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
     private void downloadMp3(final Vocabulary vocabulary){
+        Log.d(TAG,"vocabulary = " + vocabulary.toString());
         try{
             Uri downloadUri = Uri.parse(Default.URL_MP3 + vocabulary.getSound_vocabulary());
             Uri destinationUri = Uri.parse(this.getExternalCacheDir().toString()+"/"+index+(index + 1)+".mp3");
@@ -173,7 +174,13 @@ public class MainActivity extends AppCompatActivity {
 
                         @Override
                         public void onDownloadFailed(int id, int errorCode, String errorMessage) {
-                            Log.d(TAG,"onDownloadFailed =" +errorMessage);
+                            ++index;
+                            if (index != vocabularies.size()){
+                                downloadMp3(vocabularies.get(index));
+                            }else{
+                                aviLoding.hide();
+                                changeIsFristRun();
+                            }
                         }
 
                         @Override
