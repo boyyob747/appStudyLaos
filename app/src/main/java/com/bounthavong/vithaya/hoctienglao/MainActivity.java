@@ -90,8 +90,6 @@ public class MainActivity extends AppCompatActivity {
         downloadManager = new ThinDownloadManager();
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-//        TextView textView = (TextView) navigation.findViewById(R.id.navigation_home).findViewById(R.id.largeLabel);
-//        textView.setTextSize(16);
         if (isFirstRun) {
             Toast.makeText(this,"Đang tải dữ liệu hãy đợi",Toast.LENGTH_LONG).show();
             aviLoding.show();
@@ -153,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
     private void downloadMp3(final Vocabulary vocabulary){
         try{
             Uri downloadUri = Uri.parse(Default.URL_MP3 + vocabulary.getSound_vocabulary());
-            Uri destinationUri = Uri.parse(this.getExternalCacheDir().toString()+"/"+index+"."+vocabulary.getSound_vocabulary());
+            Uri destinationUri = Uri.parse(this.getExternalCacheDir().toString()+"/"+index+(index + 1)+vocabulary.getSound_vocabulary());
             DownloadRequest downloadRequest = new DownloadRequest(downloadUri)
                     .setRetryPolicy(new DefaultRetryPolicy())
                     .setDestinationURI(destinationUri).setPriority(DownloadRequest.Priority.HIGH)
@@ -161,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                     .setDownloadListener(new DownloadStatusListener() {
                         @Override
                         public void onDownloadComplete(int id) {
-                            String filePath = getApplication().getExternalCacheDir().toString()+"/"+index+"."+vocabulary.getSound_vocabulary();
+                            String filePath = getApplication().getExternalCacheDir().toString()+"/"+index+(index + 1)+vocabulary.getSound_vocabulary();
                             Log.d(TAG,"filePath = " + filePath);
                             vocabularyDAO.setMp3Path(vocabulary,filePath);
                             ++index;
