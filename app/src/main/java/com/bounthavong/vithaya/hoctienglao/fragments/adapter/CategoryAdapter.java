@@ -20,10 +20,11 @@ import io.realm.RealmList;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryVH>{
     RealmList<Category> categories;
     Context context;
-
-    public CategoryAdapter(RealmList<Category> categories, Context context) {
+    boolean isQui;
+    public CategoryAdapter(RealmList<Category> categories, Context context,boolean isQui) {
         this.categories = categories;
         this.context = context;
+        this.isQui = isQui;
     }
 
     @Override
@@ -35,7 +36,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryVH>{
 
     @Override
     public void onBindViewHolder(CategoryVH holder, int position) {
-        holder.bindData(categories.get(position),position);
+        holder.bindData(categories.get(position),position,isQui);
     }
 
     @Override

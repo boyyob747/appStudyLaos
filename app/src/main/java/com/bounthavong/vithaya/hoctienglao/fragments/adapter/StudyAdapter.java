@@ -38,6 +38,7 @@ public class StudyAdapter extends RecyclerView.Adapter<StudyVH>{
     @Override
     public void onBindViewHolder(StudyVH holder, int position) {
         holder.bindData(levels.get(position));
+        holder.mTxtNameLevel.setText("Bài kiểm tra số " + (position + 1));
         holder.setItemRecyclerClickListener(new ItemRecyclerClickListener() {
             @Override
             public void onClick(View view, int position) {

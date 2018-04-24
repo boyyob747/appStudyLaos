@@ -23,7 +23,7 @@ import io.realm.Realm;
 public class StudyVH extends RecyclerView.ViewHolder implements View.OnClickListener {
     View view;
     @BindView(R.id.name_level)
-    TextView mTxtNameLevel;
+    public TextView mTxtNameLevel;
     @BindView(R.id.count_vb_not_remember)
     TextView mTxtCountVB;
     Context context;
@@ -37,7 +37,6 @@ public class StudyVH extends RecyclerView.ViewHolder implements View.OnClickList
         ButterKnife.bind(this,itemView);
     }
     public void bindData(final Level level){
-        mTxtNameLevel.setText(level.getName());
         if (level.getDiem() != -1){
             mTxtCountVB.setText(context.getResources().getString(R.string.ket_qua_kiem_tra_la,level.getDiem()));
         }else{

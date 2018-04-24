@@ -28,4 +28,5 @@
     <string name="ban_chua_kiem_tra">Bạn chưa kiểm tra</string>
     <string name="kiem_tra_da_hoan_thanh">Kiểm tra đã hoàn thành</string>
     <string name="bai_hoc">Bài học số %d : </string>
+    <string name="bai_hoc_tt">Bài thực hành số %d : </string>
 </resources>

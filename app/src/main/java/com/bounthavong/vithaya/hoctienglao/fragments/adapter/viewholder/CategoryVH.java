@@ -34,8 +34,15 @@ public class CategoryVH extends RecyclerView.ViewHolder{
         this.context = context;
         ButterKnife.bind(this,itemView);
     }
-    public void bindData(final Category category,int position){
-        String name = itemView.getResources().getString(R.string.bai_hoc,position+1) + " " + category.getName();
+    public void bindData(final Category category,int position,boolean isQuiz){
+        String name = "";
+        if (!isQuiz){
+            name = itemView.getResources().getString(R.string.bai_hoc,position+1) + " " + category.getName();
+        }else{
+            name = itemView.getResources().getString(R.string.bai_hoc_tt,position+1) + " " + category.getName();
+        }
+
+
         mTxtNameCategory.setText(name);
 //        RequestOptions requestOptions = new RequestOptions();
 //        requestOptions.diskCacheStrategy(DiskCacheStrategy.NONE);
